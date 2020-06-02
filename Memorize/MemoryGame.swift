@@ -20,9 +20,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         set {
             // turns all the other cards face down
             for index in cards.indices {
-                if cards[index].isFaceUp {
-                    seenCards.insert(cards[index].id)
-                }
                 cards[index].isFaceUp = index == newValue
             }
         }
@@ -38,13 +35,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     score += 2
                 } else {
                     // mismatch case
-                    print ("\(seenCards)")
                     if seenCards.contains(cards[chosenIndex].id) {
                         score -= 1
                     }
                     if seenCards.contains(cards[potentialMatchIndex].id) {
                         score -= 1
                     }
+                    seenCards.insert(cards[chosenIndex].id)
+                    seenCards.insert(cards[potentialMatchIndex].id)
                 }
                 self.cards[chosenIndex].isFaceUp = true
             } else {
