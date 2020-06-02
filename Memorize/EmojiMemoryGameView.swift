@@ -12,14 +12,28 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        Grid(viewModel.cards) { card in
-                CardView(card: card).onTapGesture  {
+        NavigationView {
+            VStack {
+                Grid(viewModel.cards) { card in
+                    CardView(card: card).onTapGesture  {
                         self.viewModel.choose(card: card)
+                    }
+                    .padding(5)
                 }
-        .padding(5)
+                .padding()
+                .foregroundColor(viewModel.color)
+                .navigationBarTitle(Text("Memorize! - \(viewModel.themeName)"), displayMode: .inline)
+                .navigationBarItems(trailing:
+                    Button(action: self.viewModel.newGame) {
+                        Text("New Game")
+                })
+                
+                Text("Score: \(self.viewModel.score)")
+                    .bold()
+                    .foregroundColor(self.viewModel.color)
+            }
         }
-        .padding()
-        .foregroundColor(Color.orange)
+        
     }
 }
 
@@ -44,8 +58,8 @@ struct CardView : View {
                 }
             }
         }
-        //.aspectRatio(2/3, contentMode: .fit)
-        .font(Font.system(size: fontSize(for: size)))
+            //.aspectRatio(2/3, contentMode: .fit)
+            .font(Font.system(size: fontSize(for: size)))
     }
     
     // MARK: - Drawing Constants

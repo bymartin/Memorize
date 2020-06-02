@@ -14,15 +14,13 @@ class EmojiMemoryGame: ObservableObject {
         // MemoryGame<String>(numberOfPairsOfCards: 2) { _  in "😀" }
     
     static func createMemoryGame() -> MemoryGame<String> {
-        // Have the emoji on the cards be randomly chosen from a larger set so
-        // that each game won't always use the same 5 emoji
-        var emojiList = ["👻","🎃","🕷","👺","🍬","🍭","😈","💩","👽","🤡","☠️","💀","🧠","👁"]
-        // shuffle the array and then use the first 5 emoji for the game
-        emojiList.shuffle()
-        let emojis = emojiList[0..<5]
-        // let emojis = ["👻","🎃","🕷","👺","🍬"]
-        let randomNumberOfPairs = Int.random(in: 2...emojis.count)
-        return MemoryGame<String>(numberOfPairsOfCards: randomNumberOfPairs) { pairIndex in
+
+        var emojiTheme = themes.randomElement()!
+        
+        emojiTheme.emojiList.shuffle()
+        let emojis = emojiTheme.emojiList[0..<5]
+        
+        return MemoryGame<String>(theme: emojiTheme) { pairIndex in
             return emojis[pairIndex]
         }
     }
@@ -33,11 +31,27 @@ class EmojiMemoryGame: ObservableObject {
         model.cards
     }
     
+    var color: Color {
+        return model.theme.color
+    }
+    
+    var themeName: String {
+        return model.theme.name
+    }
+    
+    var score: Int {
+        return model.score
+    }
+    
     // MARK: - Intent(s)
     // things the view can do to change the model
     
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
+    }
+    
+    func newGame() {
+        model = EmojiMemoryGame.createMemoryGame()
     }
     
 }
