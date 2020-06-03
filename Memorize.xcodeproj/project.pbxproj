@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C25AB74248737BF007E07AE /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C25AB73248737BF007E07AE /* Pie.swift */; };
 		4C2F7E6024746CBB00092540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F7E5F24746CBB00092540 /* AppDelegate.swift */; };
 		4C2F7E6224746CBB00092540 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F7E6124746CBB00092540 /* SceneDelegate.swift */; };
 		4C2F7E6424746CBB00092540 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F7E6324746CBB00092540 /* EmojiMemoryGameView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C25AB73248737BF007E07AE /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		4C2F7E5C24746CBB00092540 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2F7E5F24746CBB00092540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C2F7E6124746CBB00092540 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				4C2F7E5F24746CBB00092540 /* AppDelegate.swift */,
 				4C2F7E6124746CBB00092540 /* SceneDelegate.swift */,
 				4C2F7E6324746CBB00092540 /* EmojiMemoryGameView.swift */,
+				4C25AB73248737BF007E07AE /* Pie.swift */,
 				4CD6B06E248051BD00CB2B9C /* Grid.swift */,
 				4C5159EE248198BB0008AD93 /* Array+Identifiable.swift */,
 				4CD6B07024805AC900CB2B9C /* GridLayout.swift */,
@@ -175,6 +178,7 @@
 				4C2F7E762474AD7600092540 /* EmojiMemoryGame.swift in Sources */,
 				4C5159EF248198BB0008AD93 /* Array+Identifiable.swift in Sources */,
 				4C7F023924858CDB0016BFDE /* Theme.swift in Sources */,
+				4C25AB74248737BF007E07AE /* Pie.swift in Sources */,
 				4CD6B07124805AC900CB2B9C /* GridLayout.swift in Sources */,
 				4CD6B06F248051BD00CB2B9C /* Grid.swift in Sources */,
 			);
