@@ -18,6 +18,10 @@ class EmojiMemoryGame: ObservableObject {
         var emojiTheme = themes.randomElement()!
         
         emojiTheme.emojiList.shuffle()
+
+        print(emojiTheme.json!.utf8!)
+        
+        
         let emojis = emojiTheme.emojiList[0..<5]
         
         return MemoryGame<String>(theme: emojiTheme) { pairIndex in
