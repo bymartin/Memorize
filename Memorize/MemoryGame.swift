@@ -54,8 +54,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     init(theme: Theme, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
-        let numberOfPairsOfCards = theme.numberOfPairsOfCardsToShow ?? Int.random(in: 2...5)
-        for pairIndex in 0..<numberOfPairsOfCards {
+        for pairIndex in 0..<theme.numberOfPairsOfCardsToShow {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(content: content, id: pairIndex*2))
             cards.append(Card(content: content, id: pairIndex*2+1))

@@ -12,14 +12,14 @@ import SwiftUI
 struct Theme {
     let name: String
     var emojiList: [String]
-    var numberOfPairsOfCardsToShow: Int?
+    var numberOfPairsOfCardsToShow: Int
     let color: Color
 }
 
 let themes = [halloween, gaming, animals, christmas, food, vehicles, faces]
 
 let halloween = Theme(name: "Halloween", emojiList: ["👻","🎃","🕷","👺","🍬","🍭","💀","🧠","👁"],
-                      numberOfPairsOfCardsToShow: nil, color: .orange)
+                      numberOfPairsOfCardsToShow: 5, color: .orange)
 
 let gaming = Theme(name: "Gaming", emojiList: ["🎮","🕹","🎳","🎰","👾","🎲","🤖","🏈","🏓","🖥","💻"],
                    numberOfPairsOfCardsToShow: 5, color: .blue)
